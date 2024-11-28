@@ -9,12 +9,21 @@ namespace DAL_Biblioteca
 {
     public class Service
     {
-
+        #region Genero
         public static List<Genero> ObtenerListadoGeneros()
         {
             return ListadoDeGeneros.listado;
         }
+        public static Genero ObtenerGenero(int id)
+        {
+            Genero obj = ListadoDeGeneros.listado.FirstOrDefault(i => i.Id == id);
+            return obj;
+        }
+        #endregion
 
+
+
+        #region Libros
         public static List<Libro> ObtenerListadoDeLibrosPorGenero(int id)
         {
             List<Libro> libros = new List<Libro>();
@@ -36,13 +45,23 @@ namespace DAL_Biblioteca
             return obj;
         }
 
-        public static Genero ObtenerGenero(int id)
+        public static void EliminarLibro(int id)
         {
-            Genero obj = ListadoDeGeneros.listado.FirstOrDefault(i => i.Id == id);
-            return obj;
+            Libro obj = ObtenerLibro(id);
+            ListadoDeLibros.listado.Remove(obj);
+
         }
 
 
+        public static void AnyadirLibro(Libro obj)
+        {
+            if (!ListadoDeLibros.listado.Contains(obj))
+            {
 
+                ListadoDeLibros.listado.Add(obj);
+            }
+
+        }
+        #endregion
     }
 }

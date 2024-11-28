@@ -34,6 +34,7 @@ namespace ENT_Bibloteca
         {
             return obj is Libro libro &&
                    Id == libro.Id;
+           
         }
     }
 }

@@ -28,7 +28,10 @@
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
+
             </ListView.ItemTemplate>
+
+
         </ListView>
     </Grid>
 
