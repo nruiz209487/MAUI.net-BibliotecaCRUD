@@ -49,7 +49,7 @@
                         }
                     </td>
                     <td class="text-center">
-                        <!-- Botones apilados -->
+
                         <div class="btn-group-vertical">
                             @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
                             @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
@@ -60,7 +60,6 @@
         </tbody>
     </table>
 
-    <!-- Crear Nuevo botón al final y centrado -->
     <div class="text-center mt-4">
         <a class="btn btn-primary" asp-action="Create">Crear Nuevo</a>
     </div>

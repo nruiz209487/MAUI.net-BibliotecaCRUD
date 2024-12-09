@@ -25,14 +25,14 @@ namespace BL_Biblioteca
             return Service.ObtenerGenero(id);
         }
         #endregion
+
+
+        #region Libros
         /// <summary>
         ///  LLAMA A LA DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns> List<Libro></returns>
-
-        #region Libros
-
         public static List<Libro> ObtenerListadoDeLibrosPorGenero(int id)
         {
             return Service.ObtenerListadoDeLibrosPorGenero(id);

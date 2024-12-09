@@ -6,11 +6,11 @@
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <Grid Padding="10">
-        <!-- Lista de géneros -->
+
         <ListView ItemsSource="{Binding Generos}" SelectedItem="{Binding SelectedGenero}" 
                   ItemSelected="ListView_ItemSelected">
             <ListView.Header>
-                <!-- Encabezado de la lista -->
+
                 <StackLayout Orientation="Horizontal" BackgroundColor="#EAEAEA" Padding="10">
                     <Label Text="Nombre" WidthRequest="200" FontAttributes="Bold" />
                     <Label Text="Descripción" WidthRequest="300" FontAttributes="Bold" />
@@ -18,7 +18,7 @@
             </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <!-- Diseño de cada elemento de la lista -->
+
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="10">
                             <Label Text="{Binding Nombre}" WidthRequest="200" VerticalOptions="Center" />

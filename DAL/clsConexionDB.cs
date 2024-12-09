@@ -19,9 +19,7 @@ namespace DAL
 
             try
             {
-
                 miConexion.ConnectionString = "server=nruiz-nervion.database.windows.net;database=nruizDB ;uid=usuario;pwd=LaCampana123;trustServerCertificate = true;";
-
                 miConexion.Open();
 
             }

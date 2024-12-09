@@ -13,18 +13,16 @@
         <h4>Detalles del Libro</h4>
         <hr />
 
-        <!-- Título centrado -->
         <p class="lead">
             @Html.DisplayFor(model => model.Titulo)
         </p>
 
-        <!-- Imagen centrada -->
         <div>
                 <img src="@Model.Img" alt="@Model.Titulo" class="img-fluid" style="max-width: 200px; margin: 0 auto; display: block;" />
         </div>
     </div>
 
-    <!-- Botones apilados al final -->
+
     <div class="text-center mt-4">
         <form asp-action="Delete" class="d-inline">
             <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />

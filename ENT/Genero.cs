@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ENT_Bibloteca
 {
+    /// <summary>
+    /// CLASE GEENRO CON SUS PARMETROS  Y CONSTRUCTORES 
+    /// </summary>
     public class Genero
     {
 
@@ -22,7 +25,11 @@ namespace ENT_Bibloteca
             Descripcion = descripcion;
         }
 
-
+        /// <summary>
+        /// compara por id 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object? obj)
         {
             return obj is Genero genero &&

@@ -13,6 +13,9 @@ namespace UIBiblioteca.VM
 {
     public class GeneroYListadoDeLibros : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Popiedades para el vm
+        /// </summary>
         private Genero obj;
         private ObservableCollection<Libro> libros;
         private Libro libroSeleccionado;
@@ -23,6 +26,10 @@ namespace UIBiblioteca.VM
         public DateTime fechaDeSalida;
         public int idGenero;
         public string img;
+
+        /// <summary>
+        /// Propiedad pública para atributo
+        /// </summary>
         public int Id
         {
             get => id;
@@ -31,10 +38,13 @@ namespace UIBiblioteca.VM
                 if (id != value)
                 {
                     id = value;
-                    OnPropertyChanged(nameof(Id)); 
+                    OnPropertyChanged(nameof(Id));
                 }
             }
         }
+        /// <summary>
+        /// Propiedad pública para atributo
+        /// </summary>
         public string Titulo
         {
             get => titulo;
@@ -43,10 +53,13 @@ namespace UIBiblioteca.VM
                 if (titulo != value)
                 {
                     titulo = value;
-                    OnPropertyChanged(nameof(Titulo)); 
+                    OnPropertyChanged(nameof(Titulo));
                 }
             }
         }
+        /// <summary>
+        /// Propiedad pública para atributo
+        /// </summary>
         public string Sinopsis
         {
             get => sinopsis;
@@ -55,10 +68,13 @@ namespace UIBiblioteca.VM
                 if (sinopsis != value)
                 {
                     sinopsis = value;
-                    OnPropertyChanged(nameof(Sinopsis)); 
+                    OnPropertyChanged(nameof(Sinopsis));
                 }
             }
         }
+        /// <summary>
+        /// Propiedad pública para atributo
+        /// </summary>
         public string Autor
         {
             get => autor;
@@ -67,10 +83,13 @@ namespace UIBiblioteca.VM
                 if (autor != value)
                 {
                     autor = value;
-                    OnPropertyChanged(nameof(Autor)); 
+                    OnPropertyChanged(nameof(Autor));
                 }
             }
         }
+        /// <summary>
+        /// Propiedad pública para atributo
+        /// </summary>
         public DateTime FechaDeSalida
         {
             get => fechaDeSalida;
@@ -79,10 +98,13 @@ namespace UIBiblioteca.VM
                 if (fechaDeSalida != value)
                 {
                     fechaDeSalida = value;
-                    OnPropertyChanged(nameof(FechaDeSalida)); 
+                    OnPropertyChanged(nameof(FechaDeSalida));
                 }
             }
         }
+        /// <summary>
+        /// Propiedad pública para atributo
+        /// </summary>
         public int IdGenero
         {
             get => idGenero;
@@ -91,10 +113,13 @@ namespace UIBiblioteca.VM
                 if (idGenero != value)
                 {
                     idGenero = value;
-                    OnPropertyChanged(nameof(IdGenero)); 
+                    OnPropertyChanged(nameof(IdGenero));
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public string Img
         {
             get => img;
@@ -103,11 +128,11 @@ namespace UIBiblioteca.VM
                 if (img != value)
                 {
                     img = value;
-                    OnPropertyChanged(nameof(Img)); 
+                    OnPropertyChanged(nameof(Img));
                 }
             }
         }
-        /// Propiedad pública para atribto
+        /// Propiedad pública para atributo
         public Genero Obj
         {
             get => obj;
@@ -116,12 +141,12 @@ namespace UIBiblioteca.VM
                 if (obj != value)
                 {
                     obj = value;
-                    OnPropertyChanged(nameof(Obj)); 
+                    OnPropertyChanged(nameof(Obj));
                 }
             }
         }
 
-        /// Propiedad pública para atribto
+        /// Propiedad pública para atributo
         public ObservableCollection<Libro> Libros
         {
             get => libros;
@@ -134,7 +159,7 @@ namespace UIBiblioteca.VM
                 }
             }
         }
-        /// Propiedad pública para atribto
+        /// Propiedad pública para atributo
         public Libro LibroSeleccionado
         {
             get => libroSeleccionado;
