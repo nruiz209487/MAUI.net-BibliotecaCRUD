@@ -58,6 +58,7 @@ namespace ASPBibliotecaCRUD.Controllers
         {
             try
             {
+                ClsListadosBL.ModificarLibro(obj);
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -65,6 +65,16 @@ namespace DAL_Biblioteca
             }
 
         }
+
+        public static void  ModificarLibro(Libro obj)
+        {
+            ListadoDeLibros.listado.Remove(obj);
+            if (!ListadoDeLibros.listado.Contains(obj))
+            {
+                ListadoDeLibros.listado.Add(obj);
+            }
+        }
+
         #endregion
     }
 }
