@@ -31,7 +31,7 @@ namespace UIBiblioteca.VM
                 if (id != value)
                 {
                     id = value;
-                    OnPropertyChanged(nameof(Id)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Id)); 
                 }
             }
         }
@@ -43,7 +43,7 @@ namespace UIBiblioteca.VM
                 if (titulo != value)
                 {
                     titulo = value;
-                    OnPropertyChanged(nameof(Titulo)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Titulo)); 
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace UIBiblioteca.VM
                 if (sinopsis != value)
                 {
                     sinopsis = value;
-                    OnPropertyChanged(nameof(Sinopsis)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Sinopsis)); 
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace UIBiblioteca.VM
                 if (autor != value)
                 {
                     autor = value;
-                    OnPropertyChanged(nameof(Autor)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Autor)); 
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace UIBiblioteca.VM
                 if (fechaDeSalida != value)
                 {
                     fechaDeSalida = value;
-                    OnPropertyChanged(nameof(FechaDeSalida)); // Notifica el cambio
+                    OnPropertyChanged(nameof(FechaDeSalida)); 
                 }
             }
         }
@@ -91,7 +91,7 @@ namespace UIBiblioteca.VM
                 if (idGenero != value)
                 {
                     idGenero = value;
-                    OnPropertyChanged(nameof(IdGenero)); // Notifica el cambio
+                    OnPropertyChanged(nameof(IdGenero)); 
                 }
             }
         }
@@ -103,10 +103,11 @@ namespace UIBiblioteca.VM
                 if (img != value)
                 {
                     img = value;
-                    OnPropertyChanged(nameof(Img)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Img)); 
                 }
             }
         }
+        /// Propiedad pública para atribto
         public Genero Obj
         {
             get => obj;
@@ -115,12 +116,12 @@ namespace UIBiblioteca.VM
                 if (obj != value)
                 {
                     obj = value;
-                    OnPropertyChanged(nameof(Obj)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Obj)); 
                 }
             }
         }
 
-        // Propiedad pública para la colección de libros
+        /// Propiedad pública para atribto
         public ObservableCollection<Libro> Libros
         {
             get => libros;
@@ -129,10 +130,11 @@ namespace UIBiblioteca.VM
                 if (libros != value)
                 {
                     libros = value;
-                    OnPropertyChanged(nameof(Libros)); // Notifica el cambio
+                    OnPropertyChanged(nameof(Libros));
                 }
             }
         }
+        /// Propiedad pública para atribto
         public Libro LibroSeleccionado
         {
             get => libroSeleccionado;
@@ -146,10 +148,13 @@ namespace UIBiblioteca.VM
             }
         }
 
-
+        /// Propiedades pública para commands
         public ICommand NuevoLibroCommand { get; }
         public ICommand EliminarLibroCommand { get; }
-
+        /// <summary>
+        /// Constructor inicializa las lista por id y los commands
+        /// </summary>
+        /// <param name="id"></param>
         public GeneroYListadoDeLibros(int id)
         {
             obj = ClsListadosBL.ObtenerGenero(id);
@@ -161,12 +166,17 @@ namespace UIBiblioteca.VM
 
 
 
-
+        /// <summary>
+        /// Actauliza el listado para que se refrsque al hacer cambios 
+        /// </summary>
         public void ActalizarLista()
         {
             Libros.Clear();
             Libros = new ObservableCollection<Libro>(ClsListadosBL.ObtenerListadoDeLibrosPorGenero(Obj.Id));
         }
+        /// <summary>
+        /// agrega un nuevo libropor medio de los parametros del vm
+        /// </summary>
         public void AgregarNuevoLibro()
         {
             ClsListadosBL.AnyadirLibro(titulo, sinopsis, autor, fechaDeSalida, idGenero, img);
@@ -174,6 +184,9 @@ namespace UIBiblioteca.VM
 
 
         }
+        /// <summary>
+        /// Elimina un libro por id usa el id del libro seleccionado 
+        /// </summary>
         public void EliminarUnLibro()
         {
             if (LibroSeleccionado != null)
@@ -184,7 +197,9 @@ namespace UIBiblioteca.VM
         }
 
 
-
+        /// <summary>
+        /// Implementacion del INOTIFYPROPERTYCHANGED
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)

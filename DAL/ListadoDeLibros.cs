@@ -6,6 +6,10 @@ namespace DAL_Biblioteca
 {
     public class ListadoDeLibros
     {
+        /// <summary>
+        /// OBTIENE EL LISTADO COMPLETO DE LIBROS DE LA DB 
+        /// </summary>
+        /// <returns>UN LISTADO DE  List<Libro> </returns>
         public static List<Libro> listadoCompletoLibrosDAL()
         {
             List<Libro> listado = new List<Libro>();

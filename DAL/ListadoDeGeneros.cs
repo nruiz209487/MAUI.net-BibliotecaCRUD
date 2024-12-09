@@ -6,6 +6,10 @@ namespace DAL_Biblioteca
 {
     public class ListadoDeGeneros
     {
+        /// <summary>
+        /// OBTIENENE EL LISTADO DE GENEROS DE LA BD
+        /// </summary>
+        /// <returns>UN LISTADO DE List<Genero></returns>
         public static List<Genero> listadoCompletoGenerosDAL()
         {
             List<Genero> listado = new List<Genero>();

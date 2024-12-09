@@ -12,11 +12,19 @@ namespace DAL_Biblioteca
     public class Service
     {
         #region Genero
+        /// <summary>
+        /// OBTIENE EL LISATDO COMPLETO DE GEENEROS 
+        /// </summary>
+        /// <returns>UNA List<Genero></returns>
         public static List<Genero> ObtenerListadoGeneros()
         {
             return ListadoDeGeneros.listadoCompletoGenerosDAL();
         }
-
+        /// <summary>
+        /// OBTIENE  UN GENERO DE LA DB USA EL ID PARA EL WHERE 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>INT CON EL NUMERO DE FILAS AFECTADAS</returns>
         public static Genero ObtenerGenero(int id)
         {
             Genero genero = null;
@@ -65,6 +73,11 @@ namespace DAL_Biblioteca
         #endregion
 
         #region Libros
+        /// <summary>
+        /// OBTIENE EL LISTADO FLITRADO POR GEENROS USA EL ID DEL GEENRO PARA EL WHERE 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>INT CON EL NUMERO DE FILAS AFECTADAS</returns>
         public static List<Libro> ObtenerListadoDeLibrosPorGenero(int id)
         {
             List<Libro> libros = new List<Libro>();
@@ -116,7 +129,11 @@ namespace DAL_Biblioteca
 
             return libros;
         }
-
+        /// <summary>
+        /// OBTIENE  UN LIBRO DE LA DB USA EL ID PARA EL WHERE 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>INT CON EL NUMERO DE FILAS AFECTADAS</returns>
         public static Libro ObtenerLibro(int id)
         {
             Libro libro = null;
@@ -166,7 +183,11 @@ namespace DAL_Biblioteca
 
             return libro;
         }
-
+        /// <summary>
+        /// ELIMINA UN LIBRO DE LA DB USA EL ID PARA EL WHERE 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>INT CON EL NUMERO DE FILAS AFECTADAS</returns>
         public static int EliminarLibro(int id)
         {
             int filasAfectadas = 0;
@@ -197,16 +218,19 @@ namespace DAL_Biblioteca
 
             return filasAfectadas;
         }
-
+        /// <summary>
+        /// ANYADE UN NUEVO LIBRO A LA BD COJE LOS CAMPOS Y HACE UN INSERT 
+        /// </summary>
+        /// <param name="titulo"></param>
+        /// <param name="sinopsis"></param>
+        /// <param name="autor"></param>
+        /// <param name="fechaDeSalida"></param>
+        /// <param name="idGenero"></param>
+        /// <param name="img"></param>
+        /// <returns> INT CON EL NUMERO DE FILAS AFECTADAS </returns>
         public static int AnyadirLibro(string titulo, string sinopsis, string autor, DateTime fechaDeSalida, int idGenero, string img)
         {
             int filasAfectadas = 0;
-
-            // Asegurarse de que la fecha de salida esté en el rango correcto
-            if (fechaDeSalida < new DateTime(1753, 1, 1) || fechaDeSalida > new DateTime(9999, 12, 31))
-            {
-                throw new ArgumentOutOfRangeException("fechaDeSalida", "La fecha debe estar entre el 1 de enero de 1753 y el 31 de diciembre de 9999.");
-            }
 
             SqlConnection conexion = new SqlConnection();
             SqlCommand miComando = new SqlCommand();
@@ -243,7 +267,11 @@ namespace DAL_Biblioteca
             return filasAfectadas;
         }
 
-
+        /// <summary>
+        /// MODIFICA UN LIBRO EN LA DB US EL ID COMO CAMPO PARA EL WHERE 
+        /// </summary>
+        /// <param name="libro"></param>
+        /// <returns> INT CON EL NUMERO DE FILAS AFECTADAS </returns>
         public static int ModificarLibro(Libro libro)
         {
             int filasAfectadas = 0;

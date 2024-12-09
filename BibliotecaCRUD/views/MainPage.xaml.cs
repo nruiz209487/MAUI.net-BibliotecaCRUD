@@ -7,7 +7,13 @@ namespace BibliotecaCRUD
 {
     public partial class MainPage : ContentPage
     {
+        /// <summary>
+        ///lISTADO
+        /// </summary>
         public ObservableCollection<Genero> Generos { get; set; }
+        /// <summary>
+        /// GENERO SELECIONADO
+        /// </summary>
         public Genero SelectedGenero { get; set; }
 
         public MainPage()
@@ -19,6 +25,12 @@ namespace BibliotecaCRUD
             BindingContext = this; // Configura el BindingContext para los bindings
         }
 
+
+        /// <summary>
+        /// AL SELECIONAR UN GEENRO NAVEGA A LA SIGUIENTE PAGINA PASANDOLO POR ID
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem is Genero generoSeleccionado)
