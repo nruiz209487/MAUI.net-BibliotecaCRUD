@@ -37,15 +37,11 @@ namespace BL_Biblioteca
             return Service.ObtenerLibro(id);
         }
 
-        public static void AnyadirLibro(Libro obj)
-        {
-            Service.AnyadirLibro(obj);
 
-        }
 
-        public static void ModificarLibro(Libro libroSeleccionado)
+        public static void AnyadirLibro( string titulo, string sinopsis, string autor, DateTime fechaDeSalida, int idGenero, string img)
         {
-            throw new NotImplementedException();
+            Service.AnyadirLibro( titulo, sinopsis, autor, fechaDeSalida, idGenero, img);
         }
         #endregion
     }

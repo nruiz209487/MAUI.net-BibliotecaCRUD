@@ -169,11 +169,7 @@ namespace UIBiblioteca.VM
         }
         public void AgregarNuevoLibro()
         {
-
-            Libro obj = new Libro(id, titulo, sinopsis, autor, fechaDeSalida, idGenero, img
-            );
-
-            ClsListadosBL.AnyadirLibro(obj);
+            ClsListadosBL.AnyadirLibro(titulo, sinopsis, autor, fechaDeSalida, idGenero, img);
             ActalizarLista();
 
 

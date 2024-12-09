@@ -53,8 +53,11 @@ namespace DAL_Biblioteca
         }
 
 
-        public static void AnyadirLibro(Libro obj)
+        public static void AnyadirLibro( string titulo, string sinopsis, string autor, DateTime fechaDeSalida, int idGenero, string img)
         {
+            int nuevoId = ListadoDeLibros.listado.Count + 1;    
+            Libro obj = new Libro(nuevoId, titulo, sinopsis, autor, fechaDeSalida, idGenero, img);
+
             if (!ListadoDeLibros.listado.Contains(obj))
             {
 

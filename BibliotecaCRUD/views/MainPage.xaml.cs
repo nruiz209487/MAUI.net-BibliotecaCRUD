@@ -26,7 +26,7 @@ namespace BibliotecaCRUD
                 SelectedGenero = generoSeleccionado;
 
                 // Navega a la página de detalle pasando el Id del género seleccionado
-                await Navigation.PushAsync(new DetallesGeneros(generoSeleccionado.Id));
+                await Navigation.PushAsync(new ListadoDeLibrosPorGenero(generoSeleccionado.Id));
 
                 // Limpia la selección del ListView para evitar problemas de navegación repetida
                 ((ListView)sender).SelectedItem = null;

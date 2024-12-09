@@ -31,7 +31,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 15,
+                Id = 3,
                 Titulo = "La rueda del tiempo",
                 Sinopsis = "Un joven llamado Rand al'Thor debe enfrentarse al Oscuro para evitar la destrucción del mundo.",
                 Autor = "Robert Jordan",
@@ -40,7 +40,7 @@ public class ListadoDeLibros
                 Img = "https://th.bing.com/th/id/R.938cd1d1a5933cc29ee43530e0fa62b2?rik=4uh3zzfCGN4lEg&pid=ImgRaw&r=0"    },
             new Libro()
             {
-                Id = 16,
+                Id = 4,
                 Titulo = "Eragon",
                 Sinopsis = "Un joven granjero descubre que es el último de los jinetes de dragones y lucha contra un imperio malvado.",
                 Autor = "Christopher Paolini",
@@ -51,7 +51,7 @@ public class ListadoDeLibros
             // Género Ciencia Ficción
             new Libro()
             {
-                Id = 3,
+                Id = 5,
                 Titulo = "1984",
                 Sinopsis = "Un inquietante retrato de un mundo distópico gobernado por un régimen totalitario.",
                 Autor = "George Orwell",
@@ -61,7 +61,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 4,
+                Id = 6,
                 Titulo = "Fahrenheit 451",
                 Sinopsis = "En un futuro distópico, los libros son prohibidos y quemados por los bomberos.",
                 Autor = "Ray Bradbury",
@@ -71,7 +71,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 17,
+                Id = 7,
                 Titulo = "Dune",
                 Sinopsis = "En un futuro lejano, la lucha por el control de un planeta desértico con una valiosa especia.",
                 Autor = "Frank Herbert",
@@ -80,7 +80,7 @@ public class ListadoDeLibros
                 Img = "https://th.bing.com/th/id/OIP.gVElrKSmJ7rXhZQM4HK4hgHaEK?w=324&h=181&c=7&r=0&o=5&dpr=1.4&pid=1.7"      },
             new Libro()
             {
-                Id = 18,
+                Id = 8,
                 Titulo = "Neuromante",
                 Sinopsis = "Un hacker caído en desgracia es contratado para realizar una misión en un futuro cibernético.",
                 Autor = "William Gibson",
@@ -91,7 +91,7 @@ public class ListadoDeLibros
             // Género Terror
             new Libro()
             {
-                Id = 5,
+                Id = 9,
                 Titulo = "It",
                 Sinopsis = "Un grupo de amigos enfrenta a un mal ancestral que toma la forma de sus peores miedos.",
                 Autor = "Stephen King",
@@ -100,7 +100,7 @@ public class ListadoDeLibros
                 Img = "https://th.bing.com/th/id/OIP.2RjBzXJOxFN20U9Sweb_DAHaKg?rs=1&pid=ImgDetMain"      },
             new Libro()
             {
-                Id = 6,
+                Id = 10,
                 Titulo = "El Resplandor",
                 Sinopsis = "Un escritor y su familia se mudan a un hotel aislado, donde fuerzas sobrenaturales empiezan a influir en él.",
                 Autor = "Stephen King",
@@ -110,7 +110,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 19,
+                Id = 11,
                 Titulo = "La casa de los espíritus",
                 Sinopsis = "Una familia atrapada en los vicios de la política, la pasión y lo sobrenatural.",
                 Autor = "Isabel Allende",
@@ -120,7 +120,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 20,
+                Id = 12,
                 Titulo = "El Exorcista",
                 Sinopsis = "Una niña es poseída por una fuerza demoníaca, y un sacerdote lucha por salvarla.",
                 Autor = "William Peter Blatty",
@@ -130,7 +130,7 @@ public class ListadoDeLibros
             // Género Romance
             new Libro()
             {
-                Id = 7,
+                Id = 13,
                 Titulo = "Orgullo y Prejuicio",
                 Sinopsis = "Una joven lucha contra sus prejuicios y se enamora de un hombre con el que no se llevaba bien.",
                 Autor = "Jane Austen",
@@ -140,7 +140,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 8,
+                Id = 14,
                 Titulo = "Bajo la misma estrella",
                 Sinopsis = "Una conmovedora historia de dos jóvenes con cáncer que se enamoran.",
                 Autor = "John Green",
@@ -150,7 +150,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 21,
+                Id = 15,
                 Titulo = "Cumbres Borrascosas",
                 Sinopsis = "La tormentosa relación entre Heathcliff y Catherine en los páramos de Yorkshire.",
                 Autor = "Emily Brontë",
@@ -160,7 +160,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 22,
+                Id = 16,
                 Titulo = "Bajo el sol de la Toscana",
                 Sinopsis = "Una mujer compra una villa en la Toscana y, al restaurarla, encuentra el amor y la renovación.",
                 Autor = "Frances Mayes",
@@ -171,7 +171,7 @@ public class ListadoDeLibros
             // Género Aventura
             new Libro()
             {
-                Id = 9,
+                Id = 17,
                 Titulo = "La Isla del Tesoro",
                 Sinopsis = "La aventura de un joven que busca un tesoro perdido en una isla misteriosa.",
                 Autor = "Robert Louis Stevenson",
@@ -181,7 +181,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 10,
+                Id = 18,
                 Titulo = "Las Aventuras de Huckleberry Finn",
                 Sinopsis = "Huckle Finn y su amigo Jim viven emocionantes peripecias mientras navegan por el río Misisipi.",
                 Autor = "Mark Twain",
@@ -191,7 +191,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 23,
+                Id = 19,
                 Titulo = "Viaje al Centro de la Tierra",
                 Sinopsis = "Un científico y su sobrino viajan al centro de la Tierra, donde descubren un mundo subterráneo.",
                 Autor = "Jules Verne",
@@ -200,7 +200,7 @@ public class ListadoDeLibros
                 Img = "https://th.bing.com/th/id/OIP.429AxLe2NspL1ufaXaF5PwHaKc?w=207&h=292&c=7&r=0&o=5&dpr=1.4&pid=1.7"     },
             new Libro()
             {
-                Id = 24,
+                Id = 20,
                 Titulo = "El Hobbit",
                 Sinopsis = "La historia de Bilbo Bolsón, quien vive una aventura que cambiará su vida.",
                 Autor = "J.R.R. Tolkien",
@@ -211,7 +211,7 @@ public class ListadoDeLibros
             // Género Historia
             new Libro()
             {
-                Id = 11,
+                Id = 21,
                 Titulo = "Los Pilares de la Tierra",
                 Sinopsis = "Una saga épica que relata la construcción de una catedral en la Edad Media.",
                 Autor = "Ken Follett",
@@ -221,7 +221,7 @@ public class ListadoDeLibros
             },
             new Libro()
             {
-                Id = 12,
+                Id = 22,
                 Titulo = "El Nombre de la Rosa",
                 Sinopsis = "Un monje franciscano investiga una serie de asesinatos en una abadía medieval.",
                 Autor = "Umberto Eco",
