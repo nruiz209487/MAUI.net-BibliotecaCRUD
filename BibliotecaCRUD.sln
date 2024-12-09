@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ENT", "ENT\ENT.csproj", "{2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{8E0C13A6-166C-4649-AF06-3AB4E3080A57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPBibliotecaCRUD", "ASPBibliotecaCRUD\ASPBibliotecaCRUD.csproj", "{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPBibliotecaCRUD", "ASPBibliotecaCRUD\ASPBibliotecaCRUD.csproj", "{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
