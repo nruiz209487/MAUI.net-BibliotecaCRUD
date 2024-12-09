@@ -35,8 +35,10 @@
                 <Entry Placeholder="Título" Text="{Binding Titulo}" />
                 <Entry Placeholder="Sinopsis" Text="{Binding Sinopsis}" />
                 <Entry Placeholder="Autor" Text="{Binding Autor}" />
-                <Entry Placeholder="IdGenero" Text="{Binding IdGenero}" />
-                <Entry Placeholder="URL de Imagen" Text="{Binding Img}" />
+            <Entry Placeholder="IdGenero" Text="{Binding IdGenero}" />
+            <DatePicker Date="{Binding FechaDeSalida}" />
+
+            <Entry Placeholder="URL de Imagen" Text="{Binding Img}" />
 
                 <Button Text="Nuevo Libro" Command="{Binding NuevoLibroCommand}" BackgroundColor="#4CAF50" TextColor="White" />
             </StackLayout>

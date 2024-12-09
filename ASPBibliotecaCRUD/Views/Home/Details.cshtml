@@ -19,9 +19,6 @@
                 <th scope="col">
                     @Html.DisplayNameFor(model => model.Autor)
                 </th>
-                <th scope="col">
-                    @Html.DisplayNameFor(model => model.fechaDeSalida)
-                </th>
                 <th scope="col" class="text-center">
                     @Html.DisplayNameFor(model => model.Img)
                 </th>
@@ -40,9 +37,6 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Autor)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.fechaDeSalida)
                     </td>
                     <td class="text-center">
                         @if (!string.IsNullOrEmpty(item.Img))

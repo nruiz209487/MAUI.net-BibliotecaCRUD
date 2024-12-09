@@ -35,6 +35,7 @@ namespace ASPBibliotecaCRUD.Controllers
         {
             try
             {
+
                 ClsListadosBL.AnyadirLibro(obj.Titulo, obj.Sinopsis, obj.Titulo, obj.fechaDeSalida, obj.IdGenero, obj.Img);
                 return RedirectToAction(nameof(Index));
             }
