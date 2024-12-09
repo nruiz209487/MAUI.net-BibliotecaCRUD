@@ -20,14 +20,7 @@
 
         <!-- Imagen centrada -->
         <div>
-            @if (!string.IsNullOrEmpty(Model.Img))
-            {
                 <img src="@Model.Img" alt="@Model.Titulo" class="img-fluid" style="max-width: 200px; margin: 0 auto; display: block;" />
-            }
-            else
-            {
-                <span>No Image</span>
-            }
         </div>
     </div>
 
