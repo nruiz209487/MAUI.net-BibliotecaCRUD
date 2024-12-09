@@ -70,15 +70,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="views\ListadoDeLibrosPorGenero.xaml.cs">
-        <DependentUpon>ListadoDeLibrosPorGenero.xaml</DependentUpon>
-      </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <MauiXaml Update="views\DetallesLibro.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </MauiXaml>
       <MauiXaml Update="views\ListadoDeLibrosPorGenero.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>

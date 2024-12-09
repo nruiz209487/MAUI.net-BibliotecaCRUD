@@ -228,4 +228,10 @@ public class ListadoDeLibros
                 fechaDeSalida = new DateTime(1989, 5, 1),
                 IdGenero = 6,
                 Img = "https://th.bing.com/th/id/OIP.jku4-MZvd6-o8nQzG_NbxgHaLh?rs=1&pid=ImgDetMain"      } };
+    private int id;
+
+    public ListadoDeLibros(int id)
+    {
+        this.id = id;
+    }
 }

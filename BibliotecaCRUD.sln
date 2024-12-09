@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaCRUD", "BibliotecaCRUD\BibliotecaCRUD.csproj", "{03F2C80D-78F0-4923-9FC2-467B9DEF2D25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaCRUD", "BibliotecaCRUD\BibliotecaCRUD.csproj", "{03F2C80D-78F0-4923-9FC2-467B9DEF2D25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9EF9AC7F-CA2B-426A-B7C4-3AFAF6E82DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{9EF9AC7F-CA2B-426A-B7C4-3AFAF6E82DA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ENT", "ENT\ENT.csproj", "{24736441-C77C-44DB-8B9D-FA5703E03C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ENT", "ENT\ENT.csproj", "{24736441-C77C-44DB-8B9D-FA5703E03C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{8E0C13A6-166C-4649-AF06-3AB4E3080A57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{8E0C13A6-166C-4649-AF06-3AB4E3080A57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPBibliotecaCRUD", "ASPBibliotecaCRUD\ASPBibliotecaCRUD.csproj", "{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{8E0C13A6-166C-4649-AF06-3AB4E3080A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E0C13A6-166C-4649-AF06-3AB4E3080A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E0C13A6-166C-4649-AF06-3AB4E3080A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C40F1F6-BC39-4E4C-BB25-AA1C2245DB14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

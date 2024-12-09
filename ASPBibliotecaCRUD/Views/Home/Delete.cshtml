@@ -1,0 +1,42 @@
+﻿@model ENT_Bibloteca.Libro
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+
+    <h3 class="text-center mb-4">¿Estás seguro de que quieres eliminar este libro?</h3>
+
+    <div class="text-center">
+        <h4>Detalles del Libro</h4>
+        <hr />
+
+        <!-- Título centrado -->
+        <p class="lead">
+            @Html.DisplayFor(model => model.Titulo)
+        </p>
+
+        <!-- Imagen centrada -->
+        <div>
+            @if (!string.IsNullOrEmpty(Model.Img))
+            {
+                <img src="@Model.Img" alt="@Model.Titulo" class="img-fluid" style="max-width: 200px; margin: 0 auto; display: block;" />
+            }
+            else
+            {
+                <span>No Image</span>
+            }
+        </div>
+    </div>
+
+    <!-- Botones apilados al final -->
+    <div class="text-center mt-4">
+        <form asp-action="Delete" class="d-inline">
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />
+        </form>
+        <span class="mx-2">|</span>
+        <a asp-action="Index" class="btn btn-secondary btn-sm">Volver a la lista</a>
+    </div>
+</div>

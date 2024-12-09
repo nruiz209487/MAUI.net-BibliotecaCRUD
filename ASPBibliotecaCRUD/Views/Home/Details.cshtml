@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ENT_Bibloteca.Libro>
+
+@{
+    ViewData["Title"] = "Libros";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Sinopsis)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Autor)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.fechaDeSalida)
+                </th>
+                <th scope="col" class="text-center">
+                    @Html.DisplayNameFor(model => model.Img)
+                </th>
+                <th scope="col" class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sinopsis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Autor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fechaDeSalida)
+                    </td>
+                    <td class="text-center">
+                        @if (!string.IsNullOrEmpty(item.Img))
+                        {
+                            <img src="@item.Img" alt="@item.Titulo" class="img-fluid" style="max-width: 100px; max-height: 100px; display: block; margin: 0 auto;" />
+                        }
+                        else
+                        {
+                            <span>No Image</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <!-- Botones apilados -->
+                        <div class="btn-group-vertical">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Crear Nuevo botón al final y centrado -->
+    <div class="text-center mt-4">
+        <a class="btn btn-primary" asp-action="Create">Crear Nuevo</a>
+    </div>
+</div>

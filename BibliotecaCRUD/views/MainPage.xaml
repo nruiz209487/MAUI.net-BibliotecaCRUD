@@ -12,7 +12,6 @@
             <ListView.Header>
                 <!-- Encabezado de la lista -->
                 <StackLayout Orientation="Horizontal" BackgroundColor="#EAEAEA" Padding="10">
-                    <Label Text="ID" WidthRequest="50" FontAttributes="Bold" />
                     <Label Text="Nombre" WidthRequest="200" FontAttributes="Bold" />
                     <Label Text="Descripción" WidthRequest="300" FontAttributes="Bold" />
                 </StackLayout>
@@ -22,7 +21,6 @@
                     <!-- Diseño de cada elemento de la lista -->
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="10">
-                            <Label Text="{Binding Id}" WidthRequest="50" VerticalOptions="Center" />
                             <Label Text="{Binding Nombre}" WidthRequest="200" VerticalOptions="Center" />
                             <Label Text="{Binding Descripcion}" WidthRequest="300" VerticalOptions="Center" />
                         </StackLayout>

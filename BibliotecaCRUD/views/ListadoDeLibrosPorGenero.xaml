@@ -2,51 +2,47 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BibliotecaCRUD.views.ListadoDeLibrosPorGenero"
-             Title="">
+             Title="ListadoDeLibrosPorGenero">
 
 
 
     <ContentPage.ToolbarItems>
-        <!-- Botón de Eliminar en la parte superior derecha -->
-        <ToolbarItem Text="Eliminar" IconImageSource="delete_icon.png" Command="{Binding EliminarLibroCommand}" />
-    </ContentPage.ToolbarItems>
+            <ToolbarItem Text="Eliminar" IconImageSource="delete_icon.png" Command="{Binding EliminarLibroCommand}" />
+        </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Padding="10" Spacing="20">
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="20">
 
-            <!-- Mostrar la lista de libros -->
-            <Label Text="Libros en el Género" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
 
-            <ListView ItemsSource="{Binding Libros}" 
+                <Label Text="Libros en el Género" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+
+                <ListView ItemsSource="{Binding Libros}" 
           SelectedItem="{Binding LibroSeleccionado}" 
-          ItemSelected="ListView_ItemSelected" 
           Margin="0,10,0,0">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
-                                <Label Text="{Binding Titulo}" WidthRequest="200" VerticalOptions="Center" />
-                                <Label Text="{Binding Autor}" WidthRequest="150" VerticalOptions="Center" />
-                                <Label Text="{Binding FechaDeSalida}" WidthRequest="50" VerticalOptions="Center" />
-                                <Label Text="{Binding Sinopsis}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
-                                <Image Source="{Binding Img}" MaximumHeightRequest="250" MaximumWidthRequest="250"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <!-- Formulario para editar libro seleccionado -->
-            <Label Text="Crear o Editar un Libro" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+                                    <Label Text="{Binding Titulo}" WidthRequest="200" VerticalOptions="Center" />
+                                    <Label Text="{Binding Autor}" WidthRequest="150" VerticalOptions="Center" />
+                                    <Label Text="{Binding Sinopsis}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                                    <Image Source="{Binding Img}" MaximumHeightRequest="250" MaximumWidthRequest="250"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <Entry Placeholder="Título" Text="{Binding Titulo}" />
-            <Entry Placeholder="Sinopsis" Text="{Binding Sinopsis}" />
-            <Entry Placeholder="Autor" Text="{Binding Autor}" />
-            <DatePicker Date="{Binding FechaDeSalida}" />
-            <Entry Placeholder="ID del Género" Text="{Binding IdGenero}" />
-            <Entry Placeholder="URL de Imagen" Text="{Binding Img}" />
+                <Label Text="Crear o Editar un Libro" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
 
-            <Button Text="Nuevo Libro" Command="{Binding NuevoLibroCommand}" BackgroundColor="#4CAF50" TextColor="White" />
-        </StackLayout>
-    </ScrollView>
+                <Entry Placeholder="Título" Text="{Binding Titulo}" />
+                <Entry Placeholder="Sinopsis" Text="{Binding Sinopsis}" />
+                <Entry Placeholder="Autor" Text="{Binding Autor}" />
+                <Entry Placeholder="IdGenero" Text="{Binding IdGenero}" />
+                <Entry Placeholder="URL de Imagen" Text="{Binding Img}" />
 
-</ContentPage>
+                <Button Text="Nuevo Libro" Command="{Binding NuevoLibroCommand}" BackgroundColor="#4CAF50" TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage>
