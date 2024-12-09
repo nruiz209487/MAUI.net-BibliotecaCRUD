@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace ASPBibliotecaCRUD.Controllers
 {
+    /// <summary>
+    /// Home controller para cada pagina 
+    /// </summary>
     public class HomeController : Controller
     {
         // GET: HomeController
