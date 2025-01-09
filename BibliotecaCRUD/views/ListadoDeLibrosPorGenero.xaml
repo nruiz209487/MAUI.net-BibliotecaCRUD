@@ -30,13 +30,12 @@
 
             <Label Text="Crear un Libro" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
 
-            <Entry Placeholder="Título" Text="{Binding Titulo}" />
-            <Entry Placeholder="Sinopsis" Text="{Binding Sinopsis}" />
-            <Entry Placeholder="Autor" Text="{Binding Autor}" />
-            <Entry Placeholder="IdGenero" Text="{Binding IdGenero}" />
-            <DatePicker Date="{Binding FechaDeSalida}" />
-
-            <Entry Placeholder="URL de Imagen" Text="{Binding Img}" />
+            <Entry Placeholder="Título" Text="{Binding libroObj.Titulo}" />
+            <Entry Placeholder="Sinopsis" Text="{Binding libroObj.Sinopsis}" />
+            <Entry Placeholder="Autor" Text="{Binding libroObj.Autor}" />
+            <Entry Placeholder="IdGenero" Text="{Binding libroObj.IdGenero}" />
+            <DatePicker Date="{Binding libroObj.FechaDeSalida}" />
+            <Entry Placeholder="URL de Imagen" Text="{Binding libroObj.Img}" />
 
             <Button Text="Nuevo Libro" Command="{Binding NuevoLibroCommand}" BackgroundColor="#4CAF50" TextColor="White" />
         </StackLayout>

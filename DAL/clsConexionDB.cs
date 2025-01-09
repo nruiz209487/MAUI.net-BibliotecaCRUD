@@ -23,7 +23,7 @@ namespace DAL
                 miConexion.Open();
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 throw;
             }

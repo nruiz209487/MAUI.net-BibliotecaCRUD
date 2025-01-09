@@ -22,7 +22,7 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="10">
                             <Label Text="{Binding Nombre}" WidthRequest="200" VerticalOptions="Center" />
-                            <Label Text="{Binding Descripcion}" WidthRequest="300" VerticalOptions="Center" />
+                            <Label Text="{Binding  Descripcion}" WidthRequest="300" VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

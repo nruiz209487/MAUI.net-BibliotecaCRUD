@@ -18,8 +18,55 @@ namespace DAL_Biblioteca
         /// <returns>UNA List<Genero></returns>
         public static List<Genero> ObtenerListadoGeneros()
         {
-            return ListadoDeGeneros.listadoCompletoGenerosDAL();
+            List<Genero> listado = new List<Genero>();
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand miComando = new SqlCommand();
+            SqlDataReader miLector;
+            Genero genero;
+
+            try
+            {
+                conexion = clsConexionDB.getConexion();
+
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+
+                    miComando.CommandText = "SELECT * FROM GenerosDeLibros";
+                    miComando.Connection = conexion;
+                    miLector = miComando.ExecuteReader();
+
+
+                    if (miLector.HasRows)
+                    {
+                        while (miLector.Read())
+                        {
+
+                            genero = new Genero();
+                            genero.Id = (int)miLector["Id"];
+                            genero.Nombre = (string)miLector["Nombre"];
+                            genero.Descripcion = (string)miLector["Descripcion"];
+
+
+                            listado.Add(genero);
+                        }
+                    }
+                    miLector.Close();
+                }
+            }
+            catch (SqlException )
+            {
+
+                throw;
+            }
+            finally
+            {
+
+                conexion.Close();
+            }
+            return listado;
         }
+
         /// <summary>
         /// OBTIENE  UN GENERO DE LA DB USA EL ID PARA EL WHERE 
         /// </summary>
@@ -59,7 +106,7 @@ namespace DAL_Biblioteca
                     miLector.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 throw;
             }
@@ -73,6 +120,62 @@ namespace DAL_Biblioteca
         #endregion
 
         #region Libros
+        /// <summary>
+        /// OBTIENE EL LISTADO COMPLETO DE LIBROS DE LA DB 
+        /// </summary>
+        /// <returns>UN LISTADO DE  List<Libro> </returns>
+        public static List<Libro> listadoCompletoLibrosDAL()
+        {
+            List<Libro> listado = new List<Libro>();
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand miComando = new SqlCommand();
+            SqlDataReader miLector;
+            Libro libro;
+
+            try
+            {
+                conexion = clsConexionDB.getConexion();
+
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+
+                    miComando.CommandText = "SELECT * FROM Libros";
+                    miComando.Connection = conexion;
+                    miLector = miComando.ExecuteReader();
+
+                    if (miLector.HasRows)
+                    {
+                        while (miLector.Read())
+                        {
+
+                            libro = new Libro();
+                            libro.Id = (int)miLector["Id"];
+                            libro.Titulo = (string)miLector["Titulo"];
+                            libro.Sinopsis = (string)miLector["Sinopsis"];
+                            libro.Autor = (string)miLector["Autor"];
+                            libro.fechaDeSalida = (DateOnly)miLector["fechaDeSalida"];
+                            libro.IdGenero = (int)miLector["IdGenero"];
+                            libro.Img = (string)miLector["Img"];
+
+
+                            listado.Add(libro);
+                        }
+                    }
+                    miLector.Close();
+                }
+            }
+            catch (SqlException )
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return listado;
+        }
         /// <summary>
         /// OBTIENE EL LISTADO FLITRADO POR GEENROS USA EL ID DEL GEENRO PARA EL WHERE 
         /// </summary>
@@ -107,7 +210,7 @@ namespace DAL_Biblioteca
                                 Titulo = (string)miLector["Titulo"],
                                 Sinopsis = (string)miLector["Sinopsis"],
                                 Autor = (string)miLector["Autor"],
-                                fechaDeSalida = (DateTime)miLector["fechaDeSalida"],
+                                fechaDeSalida = DateOnly.FromDateTime((DateTime)miLector["fechaDeSalida"]),
                                 IdGenero = (int)miLector["IdGenero"],
                                 Img = (string)miLector["Img"]
                             };
@@ -118,7 +221,7 @@ namespace DAL_Biblioteca
                     miLector.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 throw;
             }
@@ -163,7 +266,7 @@ namespace DAL_Biblioteca
                                 Titulo = (string)miLector["Titulo"],
                                 Sinopsis = (string)miLector["Sinopsis"],
                                 Autor = (string)miLector["Autor"],
-                                fechaDeSalida = (DateTime)miLector["fechaDeSalida"],
+                                fechaDeSalida = (DateOnly)miLector["fechaDeSalida"],
                                 IdGenero = (int)miLector["IdGenero"],
                                 Img = (string)miLector["Img"]
                             };
@@ -172,7 +275,7 @@ namespace DAL_Biblioteca
                     miLector.Close();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 throw;
             }
@@ -207,7 +310,7 @@ namespace DAL_Biblioteca
                     filasAfectadas = miComando.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 throw;
             }
@@ -228,7 +331,7 @@ namespace DAL_Biblioteca
         /// <param name="idGenero"></param>
         /// <param name="img"></param>
         /// <returns> INT CON EL NUMERO DE FILAS AFECTADAS </returns>
-        public static int AnyadirLibro(string titulo, string sinopsis, string autor, DateTime fechaDeSalida, int idGenero, string img)
+        public static int AnyadirLibro(string titulo, string sinopsis, string autor, DateOnly fechaDeSalida, int idGenero, string img)
         {
             int filasAfectadas = 0;
 
@@ -244,7 +347,7 @@ namespace DAL_Biblioteca
                     miComando.Parameters.Add("@titulo", System.Data.SqlDbType.VarChar).Value = titulo;
                     miComando.Parameters.Add("@sinopsis", System.Data.SqlDbType.VarChar).Value = sinopsis;
                     miComando.Parameters.Add("@autor", System.Data.SqlDbType.VarChar).Value = autor;
-                    miComando.Parameters.Add("@fechaDeSalida", System.Data.SqlDbType.DateTime).Value = fechaDeSalida;  // Asegúrate de pasar la fecha correcta
+                    miComando.Parameters.Add("@fechaDeSalida", System.Data.SqlDbType.Date).Value = fechaDeSalida;  // Asegúrate de pasar la fecha correcta
                     miComando.Parameters.Add("@idGenero", System.Data.SqlDbType.Int).Value = idGenero;
                     miComando.Parameters.Add("@img", System.Data.SqlDbType.VarChar).Value = img;
 
@@ -255,7 +358,7 @@ namespace DAL_Biblioteca
                     filasAfectadas = miComando.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 throw;
             }
@@ -300,7 +403,7 @@ namespace DAL_Biblioteca
                     filasAfectadas = miComando.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 throw;
             }

@@ -1,4 +1,5 @@
 ﻿using BibliotecaCRUD.views;
+using BibliotecaCRUD.VM;
 using BL_Biblioteca;
 using ENT_Bibloteca;
 using System.Collections.ObjectModel;
@@ -10,19 +11,25 @@ namespace BibliotecaCRUD
         /// <summary>
         ///lISTADO
         /// </summary>
-        public ObservableCollection<Genero> Generos { get; set; }
-        /// <summary>
-        /// GENERO SELECIONADO
-        /// </summary>
-        public Genero SelectedGenero { get; set; }
+        MainPageVM objVm;
 
         public MainPage()
         {
-            InitializeComponent();
 
-            // Llenar la lista de géneros
-            Generos = new ObservableCollection<Genero>(ClsListadosBL.ObtenerListadoGeneros());
-            BindingContext = this; // Configura el BindingContext para los bindings
+            try
+            {
+                objVm = new MainPageVM();
+                BindingContext = objVm; // Configura el BindingContext para los bindings
+                InitializeComponent();
+            }
+            catch (Exception)
+            {
+                Navigation.PushAsync(new Error());
+            }
+
+
+
+
         }
 
 
@@ -35,12 +42,8 @@ namespace BibliotecaCRUD
         {
             if (e.SelectedItem is Genero generoSeleccionado)
             {
-                SelectedGenero = generoSeleccionado;
-
-                // Navega a la página de detalle pasando el Id del género seleccionado
+                objVm.SelectedGenero = generoSeleccionado;
                 await Navigation.PushAsync(new ListadoDeLibrosPorGenero(generoSeleccionado.Id));
-
-                // Limpia la selección del ListView para evitar problemas de navegación repetida
                 ((ListView)sender).SelectedItem = null;
             }
         }

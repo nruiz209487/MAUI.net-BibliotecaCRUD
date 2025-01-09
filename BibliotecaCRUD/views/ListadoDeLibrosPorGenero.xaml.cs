@@ -9,10 +9,19 @@ public partial class ListadoDeLibrosPorGenero : ContentPage
     /// CONTRCUTOR DE LA PAGINA DE LIBROS COJE POR PARAMETRO EL ID DEL LIBRO
     /// </summary>
     /// <param name="id"></param>
+    GeneroYListadoDeLibros objVM;
     public ListadoDeLibrosPorGenero(int id)
     {
-        InitializeComponent();
-        //BINDING VM
-        BindingContext = new GeneroYListadoDeLibros(id);
+        try
+        {
+            objVM = new GeneroYListadoDeLibros(id);
+            BindingContext = objVM;
+            InitializeComponent();
+        }
+        catch (Exception)
+        {
+            Navigation.PushAsync(new Error());
+        }
+
     }
 }

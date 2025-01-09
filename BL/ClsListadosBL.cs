@@ -72,9 +72,9 @@ namespace BL_Biblioteca
         /// <param name="fechaDeSalida"></param>
         /// <param name="idGenero"></param>
         /// <param name="img"></param>
-        public static void AnyadirLibro(string titulo, string sinopsis, string autor, DateTime fechaDeSalida, int idGenero, string img)
+        public static void AnyadirLibro(Libro libroObj)
         {
-            Service.AnyadirLibro(titulo, sinopsis, autor, fechaDeSalida, idGenero, img);
+            Service.AnyadirLibro(libroObj.Titulo, libroObj.Sinopsis, libroObj.Autor, libroObj.fechaDeSalida, libroObj.IdGenero, libroObj.Img);
         }
         #endregion
     }

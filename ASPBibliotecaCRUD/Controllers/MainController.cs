@@ -14,15 +14,35 @@ namespace ASPBibliotecaCRUD.Controllers
         // GET: HomeController
         public ActionResult Index()
         {
-            List<Genero> list = ClsListadosBL.ObtenerListadoGeneros();
-            return View(list);
+            List<Genero> list;
+            try
+            {
+                list = ClsListadosBL.ObtenerListadoGeneros();
+                return View(list);
+            }
+
+
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         // GET: HomeController/Details/5
         public ActionResult Details(int id)
         {
-            List<Libro> list = ClsListadosBL.ObtenerListadoDeLibrosPorGenero(id);
-            return View(list);
+            List<Libro> list;
+            try
+            {
+                list = ClsListadosBL.ObtenerListadoDeLibrosPorGenero(id);
+                return View(list);
+            }
+
+            catch (Exception)
+            {
+                return View("Error");
+            }
+
         }
 
         // GET: HomeController/Create
@@ -39,20 +59,29 @@ namespace ASPBibliotecaCRUD.Controllers
             try
             {
 
-                ClsListadosBL.AnyadirLibro(obj.Titulo, obj.Sinopsis, obj.Titulo, obj.fechaDeSalida, obj.IdGenero, obj.Img);
+                ClsListadosBL.AnyadirLibro(obj);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception)
             {
-                return View();
+                return View("Error");
             }
         }
 
         // GET: HomeController/Edit/5
         public ActionResult Edit(int id)
         {
-            Libro obj = ClsListadosBL.ObtenerLibro(id);
-            return View(obj);
+            Libro obj;
+            try
+            {
+                obj = ClsListadosBL.ObtenerLibro(id);
+                return View(obj);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+
         }
 
         // POST: HomeController/Edit/5
@@ -65,17 +94,27 @@ namespace ASPBibliotecaCRUD.Controllers
                 ClsListadosBL.ModificarLibro(obj);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception)
             {
-                return View();
+                return View("Error");
             }
         }
 
         // GET: HomeController/Delete/5
         public ActionResult Delete(int id)
         {
-            Libro obj = ClsListadosBL.ObtenerLibro(id);
-            return View(obj);
+            Libro obj;
+            try
+            {
+                obj = ClsListadosBL.ObtenerLibro(id);
+                return View(obj);
+            }
+
+            catch (Exception)
+            {
+                return View("Error");
+            }
+
         }
 
         // POST: HomeController/Delete/5
@@ -88,9 +127,9 @@ namespace ASPBibliotecaCRUD.Controllers
                 ClsListadosBL.EliminarLibro(id);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception)
             {
-                return View();
+                return View("Error");
             }
         }
     }

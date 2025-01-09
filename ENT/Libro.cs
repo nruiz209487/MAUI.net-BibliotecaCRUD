@@ -15,12 +15,21 @@ namespace ENT_Bibloteca
         public string Titulo { get; set; }
         public string Sinopsis { get; set; }
         public string Autor { get; set; }
-        public DateTime fechaDeSalida { get; set; }
+        public DateOnly fechaDeSalida { get; set; }
         public int IdGenero { get; set; }
         public string Img { get; set; }
         public Libro() { }
+        public Libro(string titulo, string sinopsis, string autor, DateOnly fechaDeSalida, int idGenero, string img)
+        {
+            Titulo = titulo;
+            Sinopsis = sinopsis;
+            Autor = autor;
+            this.fechaDeSalida = fechaDeSalida;
+            this.IdGenero = idGenero;
+            Img = img;
+        }
 
-        public Libro(int id, string titulo, string sinopsis, string autor, DateTime fechaDeSalida, int idGenero, string img)
+        public Libro(int id, string titulo, string sinopsis, string autor, DateOnly fechaDeSalida, int idGenero, string img)
         {
             Id = id;
             Titulo = titulo;
