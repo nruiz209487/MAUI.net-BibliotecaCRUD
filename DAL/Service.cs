@@ -1,4 +1,4 @@
-﻿using DAL;
+﻿
 using ENT_Bibloteca;
 using Microsoft.Data.SqlClient;
 using System;
@@ -11,6 +11,27 @@ namespace DAL_Biblioteca
 {
     public class Service
     {
+
+            private static SqlConnection getConexion()
+            {
+                SqlConnection miConexion = new SqlConnection();
+
+                try
+                {
+                    miConexion.ConnectionString = "server=nruiz-nervion.database.windows.net;database=nruizDB ;uid=usuario;pwd=LaCampana123;trustServerCertificate = true;";
+                    miConexion.Open();
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                return miConexion;
+            }
+
+
+        
         #region Genero
         /// <summary>
         /// OBTIENE EL LISATDO COMPLETO DE GEENEROS 
@@ -27,7 +48,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -82,7 +103,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -135,7 +156,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -191,7 +212,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -247,7 +268,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -300,7 +321,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -340,7 +361,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
@@ -384,7 +405,7 @@ namespace DAL_Biblioteca
 
             try
             {
-                conexion = clsConexionDB.getConexion();
+                conexion = getConexion();
 
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
