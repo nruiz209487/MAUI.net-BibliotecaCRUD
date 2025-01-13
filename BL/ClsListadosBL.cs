@@ -37,6 +37,15 @@ namespace BL_Biblioteca
         {
             return Service.ObtenerListadoDeLibrosPorGenero(id);
         }
+
+        /// <summary>
+        ///  LLAMA A LA DAL
+        /// </summary>
+        /// <returns> List<Libro></returns>
+        public static List<Libro> ObtenerListadoDeLibrosCompleto()
+        {
+            return Service.listadoCompletoLibrosDAL();
+        }
         /// <summary>
         ///  LLAMA A LA DAL
         /// </summary>
