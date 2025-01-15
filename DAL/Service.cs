@@ -175,7 +175,7 @@ namespace DAL_Biblioteca
                             libro.Titulo = (string)miLector["Titulo"];
                             libro.Sinopsis = (string)miLector["Sinopsis"];
                             libro.Autor = (string)miLector["Autor"];
-                            libro.fechaDeSalida = (DateOnly)miLector["fechaDeSalida"];
+                            libro.fechaDeSalida = DateOnly.FromDateTime((DateTime)miLector["fechaDeSalida"]);
                             libro.IdGenero = (int)miLector["IdGenero"];
                             libro.Img = (string)miLector["Img"];
 
