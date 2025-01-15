@@ -287,7 +287,7 @@ namespace DAL_Biblioteca
                                 Titulo = (string)miLector["Titulo"],
                                 Sinopsis = (string)miLector["Sinopsis"],
                                 Autor = (string)miLector["Autor"],
-                                fechaDeSalida = (DateOnly)miLector["fechaDeSalida"],
+                                fechaDeSalida = DateOnly.FromDateTime((DateTime)miLector["fechaDeSalida"]),
                                 IdGenero = (int)miLector["IdGenero"],
                                 Img = (string)miLector["Img"]
                             };
@@ -368,18 +368,21 @@ namespace DAL_Biblioteca
                     miComando.Parameters.Add("@titulo", System.Data.SqlDbType.VarChar).Value = titulo;
                     miComando.Parameters.Add("@sinopsis", System.Data.SqlDbType.VarChar).Value = sinopsis;
                     miComando.Parameters.Add("@autor", System.Data.SqlDbType.VarChar).Value = autor;
-                    miComando.Parameters.Add("@fechaDeSalida", System.Data.SqlDbType.Date).Value = fechaDeSalida;  // Asegúrate de pasar la fecha correcta
+
+                    // Convertir DateOnly a DateTime para almacenarlo en la base de datos
+                    miComando.Parameters.Add("@fechaDeSalida", System.Data.SqlDbType.Date).Value = fechaDeSalida.ToDateTime(TimeOnly.MinValue);
+
                     miComando.Parameters.Add("@idGenero", System.Data.SqlDbType.Int).Value = idGenero;
                     miComando.Parameters.Add("@img", System.Data.SqlDbType.VarChar).Value = img;
 
                     miComando.CommandText = "INSERT INTO Libros (Titulo, Sinopsis, Autor, fechaDeSalida, IdGenero, Img) " +
-                        "VALUES (@titulo, @sinopsis, @autor, @fechaDeSalida, @idGenero, @img)";
+                                            "VALUES (@titulo, @sinopsis, @autor, @fechaDeSalida, @idGenero, @img)";
                     miComando.Connection = conexion;
 
                     filasAfectadas = miComando.ExecuteNonQuery();
                 }
             }
-            catch (SqlException )
+            catch (SqlException)
             {
                 throw;
             }
@@ -390,6 +393,7 @@ namespace DAL_Biblioteca
 
             return filasAfectadas;
         }
+
 
         /// <summary>
         /// MODIFICA UN LIBRO EN LA DB US EL ID COMO CAMPO PARA EL WHERE 
@@ -413,18 +417,22 @@ namespace DAL_Biblioteca
                     miComando.Parameters.Add("@titulo", System.Data.SqlDbType.VarChar).Value = libro.Titulo;
                     miComando.Parameters.Add("@sinopsis", System.Data.SqlDbType.VarChar).Value = libro.Sinopsis;
                     miComando.Parameters.Add("@autor", System.Data.SqlDbType.VarChar).Value = libro.Autor;
-                    miComando.Parameters.Add("@fechaDeSalida", System.Data.SqlDbType.DateTime).Value = libro.fechaDeSalida;
+
+                    // Convertir DateOnly a DateTime para la base de datos
+                    miComando.Parameters.Add("@fechaDeSalida", System.Data.SqlDbType.DateTime).Value = libro.fechaDeSalida.ToDateTime(TimeOnly.MinValue);
+
                     miComando.Parameters.Add("@idGenero", System.Data.SqlDbType.Int).Value = libro.IdGenero;
                     miComando.Parameters.Add("@img", System.Data.SqlDbType.VarChar).Value = libro.Img;
 
                     miComando.CommandText = "UPDATE Libros " +
-                        "SET Titulo = @titulo, Sinopsis = @sinopsis, Autor = @autor, fechaDeSalida = @fechaDeSalida, " +
-                        "IdGenero = @idGenero, Img = @img WHERE Id = @id";
+                                            "SET Titulo = @titulo, Sinopsis = @sinopsis, Autor = @autor, fechaDeSalida = @fechaDeSalida, " +
+                                            "IdGenero = @idGenero, Img = @img WHERE Id = @id";
                     miComando.Connection = conexion;
+
                     filasAfectadas = miComando.ExecuteNonQuery();
                 }
             }
-            catch (SqlException )
+            catch (SqlException)
             {
                 throw;
             }
@@ -435,6 +443,7 @@ namespace DAL_Biblioteca
 
             return filasAfectadas;
         }
+
 
         #endregion
     }
