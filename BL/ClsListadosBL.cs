@@ -24,6 +24,30 @@ namespace BL_Biblioteca
         {
             return Service.ObtenerGenero(id);
         }
+        /// <summary>
+        ///  LLAMA A LA DAL
+        /// </summary>
+        /// <param name="nuevoGenero"></param>
+        public static void AnyadirGenero(Genero nuevoGenero)
+        {
+            Service.AnyadirGenero(nuevoGenero);
+        }
+        /// <summary>
+        ///  LLAMA A LA DAL
+        /// </summary>
+        /// <param name="generoActualizado"></param>
+        public static void ModificarGenero(Genero generoActualizado)
+        {
+            Service.ModificarGenero(generoActualizado);
+        }
+        /// <summary>
+        ///  LLAMA A LA DAL
+        /// </summary>
+        /// <param name="id"></param>
+        public static void EliminarGenero(int id)
+        {
+            Service.EliminarGenero(id);
+        }
         #endregion
 
 
@@ -85,6 +109,8 @@ namespace BL_Biblioteca
         {
             Service.AnyadirLibro(libroObj.Titulo, libroObj.Sinopsis, libroObj.Autor, libroObj.fechaDeSalida, libroObj.IdGenero, libroObj.Img);
         }
+
+
         #endregion
     }
 

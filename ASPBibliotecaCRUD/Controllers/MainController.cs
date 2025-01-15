@@ -48,6 +48,7 @@ namespace ASPBibliotecaCRUD.Controllers
         // GET: HomeController/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -100,27 +101,11 @@ namespace ASPBibliotecaCRUD.Controllers
             }
         }
 
-        // GET: HomeController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            Libro obj;
-            try
-            {
-                obj = ClsListadosBL.ObtenerLibro(id);
-                return View(obj);
-            }
 
-            catch (Exception)
-            {
-                return View("Error");
-            }
 
-        }
-
-        // POST: HomeController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, Libro obj)
+        public ActionResult Delete(int id)
         {
             try
             {
@@ -132,5 +117,6 @@ namespace ASPBibliotecaCRUD.Controllers
                 return View("Error");
             }
         }
+
     }
 }

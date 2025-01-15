@@ -118,32 +118,3 @@ namespace ASPBibliotecaCRUD.Controllers
 
 
 
-/*
-// GET: api/libros
-[HttpGet]
-public IActionResult Get()
-{
-    IActionResult salida;
-    // Lista de libros definida de manera estática
-    List<Libro> listadoCompleto = new List<Libro>
-    {
-        new Libro { Id = 1, Titulo = "El Quijote", Autor = "Miguel de Cervantes" },
-        new Libro { Id = 2, Titulo = "Cien Años de Soledad", Autor = "Gabriel García Márquez" },
-        new Libro { Id = 3, Titulo = "Don Juan Tenorio", Autor = "Tirso de Molina" }
-    };
-
-    // Verifica si la lista está vacía y responde de acuerdo a eso
-    if (listadoCompleto.Count == 0)
-    {
-        salida = NoContent(); // Si no hay libros, retorna un 204 No Content
-    }
-    else
-    {
-        salida = Ok(listadoCompleto); // Si hay libros, retorna la lista con un 200 OK
-    }
-
-    return salida;
-}
-*/
-
-
